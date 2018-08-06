@@ -13,6 +13,7 @@ urlpatterns = [
     path('editUserInfo', views.editUserInfo, name='editUserInfo'),
     path('addReport', views.addReport, name='addReport'),
     path('addReportInformation', views.addReportInformation, name='addReportInformation'),
-    path('viewAllReport', views.viewAllReport, name='viewAllReport'),
+    path('viewAllReport/<int:id>/', views.viewAllReport, name='viewAllReport'),
+    path('editReportInfo/<int:id>/', views.editReportInfo, name='editReportInfo'),
     path('logout_view', views.logout_view, name="logout_view")
 ]

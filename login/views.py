@@ -50,9 +50,14 @@ def addReportInformation(request):
 
 
 @login_required(login_url='loginView')
-def viewAllReport(request):
-    userId = 13
-    viewAllReport = Report.objects.filter(user_id= userId)
+def editReportInfo(request, id):
+    editReportInfo = Report.objects.filter(user_id=id)
+    return render(request, 'editReportInfo.html', {'editReportInfo': editReportInfo})
+
+
+@login_required(login_url='loginView')
+def viewAllReport(request, id):
+    viewAllReport = Report.objects.filter(user_id=id)
     return render(request, 'viewAllReport.html', {'viewAllReport': viewAllReport})
 
 

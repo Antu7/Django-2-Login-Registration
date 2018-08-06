@@ -16,7 +16,6 @@
         </div>
     </div>
     <!-- /menu profile quick info -->
-
     <br/>
 
     <!-- sidebar menu -->
@@ -33,14 +32,13 @@
                     <ul class="nav child_menu">
                         <li><a href="{% url 'editUserInfo' %}">Edit Information</a></li>
                         <li><a href="{% url 'addReport' %}">Add Report</a></li>
-                        <li><a href="{% url 'viewAllReport' %}">View All Report</a></li>
+                        <li><a href="{% url 'viewAllReport' user.id %}">View All Report</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
     </div>
     <!-- /sidebar menu -->
-
     <!-- /menu footer buttons -->
     <div class="sidebar-footer hidden-small">
         <a data-toggle="tooltip" data-placement="top" title="Settings">
