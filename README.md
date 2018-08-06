@@ -1,6 +1,6 @@
 # Django-2-Login-Registration
 
-##### Before starting Django I was a PHP developer and as PHP developer using Form.py is tough enough for me.So I start searching online Django login registration without using Form.py after searching I found not a good result that's why I decide to create a simple project where I will show full CRUD and also login registration without using Form.py
+##### Before starting Django I was a PHP developer and as PHP developer using Form.py is tough enough for me. So I start searching online Django login registration without using Form.py after searching I found not a good result that's why I decide to create a simple project where I will show full CRUD and also login registration without using Form.py
 
 
     python version = 3 >
