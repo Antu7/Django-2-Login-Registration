@@ -1,4 +1,3 @@
-
 # Login Urls
 
 
@@ -8,8 +7,12 @@ from . import views
 
 urlpatterns = [
     path('', views.loginView, name='loginView'),
-    path('loginCheck', views.loginCheck, name = 'loginCheck'),
+    path('loginCheck', views.loginCheck, name='loginCheck'),
     path('registration', views.registration, name='registration'),
     path('home', views.home, name='home'),
+    path('editUserInfo', views.editUserInfo, name='editUserInfo'),
+    path('addReport', views.addReport, name='addReport'),
+    path('addReportInformation', views.addReportInformation, name='addReportInformation'),
+    path('viewAllReport', views.viewAllReport, name='viewAllReport'),
     path('logout_view', views.logout_view, name="logout_view")
 ]

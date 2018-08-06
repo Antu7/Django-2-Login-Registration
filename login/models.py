@@ -112,6 +112,18 @@ class DjangoSession(models.Model):
         managed = False
         db_table = 'django_session'
 
+
+class Report(models.Model):
+    report_id = models.AutoField(primary_key=True)
+    user_id = models.IntegerField()
+    report_title = models.CharField(max_length=255)
+    report_discription = models.TextField()
+    date = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'report'
+
 #
 # class User(models.Model):
 #     name = models.CharField(max_length=255)
