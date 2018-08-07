@@ -15,5 +15,6 @@ urlpatterns = [
     path('addReportInformation', views.addReportInformation, name='addReportInformation'),
     path('viewAllReport/<int:id>/', views.viewAllReport, name='viewAllReport'),
     path('editReportInfo/<int:id>/', views.editReportInfo, name='editReportInfo'),
+    path('UpdateReportInfo', views.UpdateReportInfo, name='UpdateReportInfo'),
     path('logout_view', views.logout_view, name="logout_view")
 ]

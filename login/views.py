@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import AuthUser
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -51,8 +51,26 @@ def addReportInformation(request):
 
 @login_required(login_url='loginView')
 def editReportInfo(request, id):
-    editReportInfo = Report.objects.filter(user_id=id)
+    editReportInfo = Report.objects.filter(report_id=id)
     return render(request, 'editReportInfo.html', {'editReportInfo': editReportInfo})
+
+
+@login_required(login_url='loginView')
+def UpdateReportInfo(request):
+    checkTitle = Report.objects.filter(report_title=request.POST.get('report_title'))
+    if not checkTitle:
+        Report_Update = Report.objects.get(report_id=request.POST.get('report_id'))
+        Report_Update.report_title = request.POST.get('report_title')
+        Report_Update.report_discription = request.POST.get('report_discription')
+        Report_Update.user_id = request.POST.get('user_id')
+        Report_Update.save()
+        messages.add_message(request, messages.INFO, 'Report Updated Successfully')
+        # return redirect('editReportInfo')
+        return redirect('/editReportInfo/', request.POST.get('report_id'))
+
+    else:
+        messages.add_message(request, messages.INFO, 'Report Title Already Exists')
+        return redirect('editReportInfo')
 
 
 @login_required(login_url='loginView')

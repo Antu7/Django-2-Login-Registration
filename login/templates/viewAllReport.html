@@ -1,14 +1,11 @@
 {% extends "base_site.html" %}
 {% load static %}
 {% block title %} Dashboard 1 {% endblock title %}
-
 {% block stylesheets %}
     {{ block.super }}
 {% endblock stylesheets %}
-
 {% block content %}
     <div class="right_col" role="main">
-
         <div class="">
             <div class="page-title">
                 <div class="title_left">
@@ -17,15 +14,10 @@
                     </h3>
                 </div>
             </div>
-
             <div class="clearfix"></div>
-
             <div class="row">
-
                 <div class="x_panel">
-
                     <div class="x_content">
-
                         <table id="datatable" class="table table-striped table-bordered">
                             <thead>
                             <tr>
@@ -35,8 +27,6 @@
                                 <th>Action</th>
                             </tr>
                             </thead>
-                            <!--data-toggle="modal"-->
-                            <!--data-target="#myModal"-->
                             {% for info in viewAllReport %}
                                 <tbody>
                                 <tr>
@@ -44,7 +34,7 @@
                                     <td>{{ info.report_title }}</td>
                                     <td>{{ info.report_discription }}</td>
                                     <td>
-                                        <a href="{% url 'editReportInfo' info.user_id %}"
+                                        <a href="{% url 'editReportInfo' info.report_id %}"
                                            class="btn btn-info btn-xs"><i
                                                 class="fa fa-repeat"></i>
                                             Edit </a>
@@ -60,7 +50,6 @@
     </div>
 
 {% endblock content %}
-
 {% block javascripts %}
     {{ block.super }}
     <!-- Chart.js -->
@@ -85,6 +74,4 @@
     <script src="{% static 'vendors/jqvmap/dist/jquery.vmap.js' %}"></script>
     <script src="{% static 'vendors/jqvmap/dist/maps/jquery.vmap.world.js' %}"></script>
     <script src="{% static 'vendors/jqvmap/examples/js/jquery.vmap.sampledata.js' %}"></script>
-
-
 {% endblock javascripts %}
