@@ -65,12 +65,11 @@ def UpdateReportInfo(request):
         Report_Update.user_id = request.POST.get('user_id')
         Report_Update.save()
         messages.add_message(request, messages.INFO, 'Report Updated Successfully')
-        # return redirect('editReportInfo')
-        return redirect('/editReportInfo/', request.POST.get('report_id'))
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
     else:
         messages.add_message(request, messages.INFO, 'Report Title Already Exists')
-        return redirect('editReportInfo')
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
 @login_required(login_url='loginView')
