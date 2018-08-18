@@ -57,7 +57,8 @@ def editReportInfo(request, id):
 
 @login_required(login_url='loginView')
 def UpdateReportInfo(request):
-    checkTitle = Report.objects.filter(report_title=request.POST.get('report_title'))
+    checkTitle = Report.objects.filter(report_title=request.POST.get('report_title'),
+                                       user_id=request.POST.get('user_id'))
     if not checkTitle:
         Report_Update = Report.objects.get(report_id=request.POST.get('report_id'))
         Report_Update.report_title = request.POST.get('report_title')
@@ -76,6 +77,29 @@ def UpdateReportInfo(request):
 def viewAllReport(request, id):
     viewAllReport = Report.objects.filter(user_id=id)
     return render(request, 'viewAllReport.html', {'viewAllReport': viewAllReport})
+
+
+@login_required(login_url="loginView")
+def updateUserInfo(request):
+    if (request.method == 'POST'):
+        username = request.POST.get('username')
+        current_password = request.POST.get('current_password')
+        user = authenticate(request, username=username, password=current_password)
+        if user is not None:
+            newPassword = request.POST.get('new_password')
+            confmPassword = request.POST.get('confirm_password')
+            if (newPassword == confmPassword):
+                user_update = User.objects.get(id=request.POST.get('user_id'))
+                user_update.set_password(request.POST.get('confirm_password'))
+                user_update.save()
+                messages.add_message(request, messages.INFO, 'Password Updated Successfully')
+                return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+            else:
+                messages.add_message(request, messages.INFO, 'Password and Confirm Password Not Match')
+                return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        else:
+            messages.add_message(request, messages.INFO, 'Current Password Wrong')
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
 def loginCheck(request):
