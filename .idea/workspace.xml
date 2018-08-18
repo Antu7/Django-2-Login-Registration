@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69ee0b19-446b-4e65-93c4-cea96045869e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoTest/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoTest/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/templates/editUserInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/login/templates/editUserInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/templates/addReport.html" beforeDir="false" afterPath="$PROJECT_DIR$/login/templates/addReport.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/templates/viewAllReport.html" beforeDir="false" afterPath="$PROJECT_DIR$/login/templates/viewAllReport.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
     </list>
@@ -37,26 +36,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="28" />
-          <entry key="py" value="32" />
+          <entry key="html" value="30" />
+          <entry key="py" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="28" />
-          <entry key="Python" value="32" />
+          <entry key="HTML" value="30" />
+          <entry key="Python" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="977" />
-          <entry key="py" value="1933" />
+          <entry key="html" value="990" />
+          <entry key="py" value="1973" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="977" />
-          <entry key="Python" value="1933" />
+          <entry key="HTML" value="990" />
+          <entry key="Python" value="1973" />
         </counts>
       </usages-collector>
     </session>
@@ -67,10 +66,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login/templates/editUserInfo.html">
+        <entry file="file://$PROJECT_DIR$/login/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="45" column="117" selection-start-line="45" selection-start-column="105" selection-end-line="45" selection-end-column="117" />
+            <state relative-caret-position="456">
+              <caret line="19" column="72" lean-forward="true" selection-start-line="19" selection-start-column="72" selection-end-line="19" selection-end-column="72" />
+              <folding>
+                <element signature="e#15#52#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/login/templates/viewAllReport.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="552">
+              <caret line="41" column="75" lean-forward="true" selection-start-line="41" selection-start-column="75" selection-end-line="41" selection-end-column="75" />
             </state>
           </provider>
         </entry>
@@ -78,16 +89,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/login/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="96" column="17" lean-forward="true" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
+            <state relative-caret-position="641">
+              <caret line="144" column="20" lean-forward="true" selection-start-line="144" selection-start-column="20" selection-end-line="144" selection-end-column="20" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-                <marker date="1534570141496" expanded="true" signature="599:4153" ph="..." />
-                <marker date="1534570141496" expanded="true" signature="1660:4153" ph="..." />
-                <marker date="1534570141496" expanded="true" signature="1875:2706" ph="..." />
-                <marker date="1534570141496" expanded="true" signature="2984:4153" ph="..." />
-                <marker date="1534570141496" expanded="true" signature="4153:4734" ph="..." />
+                <marker date="1534577334579" expanded="true" signature="5519:5520" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/login/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="115" column="12" selection-start-line="115" selection-start-column="6" selection-end-line="115" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -123,15 +139,15 @@
         <option value="$PROJECT_DIR$/login/templates/home.html" />
         <option value="$PROJECT_DIR$/login/templates/top_navigation.html" />
         <option value="$PROJECT_DIR$/login/templates/login.html" />
-        <option value="$PROJECT_DIR$/login/templates/addReport.html" />
         <option value="$PROJECT_DIR$/login/templates/fullReport.html" />
         <option value="$PROJECT_DIR$/login/templates/sidebar.html" />
         <option value="$PROJECT_DIR$/login/models.py" />
         <option value="$PROJECT_DIR$/login/templates/editReportInfo.html" />
-        <option value="$PROJECT_DIR$/login/templates/viewAllReport.html" />
-        <option value="$PROJECT_DIR$/login/urls.py" />
         <option value="$PROJECT_DIR$/djangoTest/settings.py" />
         <option value="$PROJECT_DIR$/login/templates/editUserInfo.html" />
+        <option value="$PROJECT_DIR$/login/templates/addReport.html" />
+        <option value="$PROJECT_DIR$/login/templates/viewAllReport.html" />
+        <option value="$PROJECT_DIR$/login/urls.py" />
         <option value="$PROJECT_DIR$/login/views.py" />
       </list>
     </option>
@@ -284,7 +300,7 @@
     <frame x="0" y="-1" width="1920" height="1052" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49834436" visible="true" weight="0.18923241" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49834436" visible="true" weight="0.18923241" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50165564" side_tool="true" weight="0.1748401" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -314,17 +330,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/login/views.py</url>
-          <line>82</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/login/templates/footer.html">
@@ -389,31 +394,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login/templates/sidebar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="617">
           <caret line="34" column="64" lean-forward="true" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login/templates/addReport.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="46" column="42" lean-forward="true" selection-end-line="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login/templates/viewAllReport.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -431,13 +415,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login/urls.py">
+    <entry file="file://$PROJECT_DIR$/login/templates/addReport.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="19" column="62" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
-          <folding>
-            <element signature="e#15#52#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="888">
+          <caret line="66" column="65" lean-forward="true" selection-start-line="66" selection-start-column="65" selection-end-line="66" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -448,17 +429,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/login/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="19" column="72" lean-forward="true" selection-start-line="19" selection-start-column="72" selection-end-line="19" selection-end-column="72" />
+          <folding>
+            <element signature="e#15#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="115" column="12" selection-start-line="115" selection-start-column="6" selection-end-line="115" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/templates/viewAllReport.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="41" column="75" lean-forward="true" selection-start-line="41" selection-start-column="75" selection-end-line="41" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/login/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="96" column="17" lean-forward="true" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
+        <state relative-caret-position="641">
+          <caret line="144" column="20" lean-forward="true" selection-start-line="144" selection-start-column="20" selection-end-line="144" selection-end-column="20" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <marker date="1534570141496" expanded="true" signature="599:4153" ph="..." />
-            <marker date="1534570141496" expanded="true" signature="1660:4153" ph="..." />
-            <marker date="1534570141496" expanded="true" signature="1875:2706" ph="..." />
-            <marker date="1534570141496" expanded="true" signature="2984:4153" ph="..." />
-            <marker date="1534570141496" expanded="true" signature="4153:4734" ph="..." />
+            <marker date="1534577334579" expanded="true" signature="5519:5520" ph="..." />
           </folding>
         </state>
       </provider>

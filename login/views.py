@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
+
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.template.defaultfilters import slugify
@@ -136,3 +137,10 @@ def logout_view(request):
     logout(request)
     messages.add_message(request, messages.INFO, 'Successfully logout')
     return redirect('loginView')
+
+
+@login_required(login_url='loginView')
+def deleteReportInfo(request, id):
+    product = Report.objects.filter(report_id=id)
+    product.delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
