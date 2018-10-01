@@ -1,7 +1,7 @@
 
 # User Model
 from django.db import models
-
+from django.shortcuts import render, redirect
 
 class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=80)

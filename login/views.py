@@ -4,22 +4,33 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
-
+import sys
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.template.defaultfilters import slugify
 from .models import Report
 
 
+# from django.core.paginator import Paginator
+
 # Create your views here.
 
 def loginView(request):
-    return render(request, "login.html")
+    if request.user.is_authenticated:
+        return render(request, "home.html")
+    else:
+        return render(request, "login.html")
+
 
 
 @login_required(login_url='loginView')
 def home(request):
     return render(request, "home.html")
+
+
+@login_required(login_url='loginView')
+def admin(request):
+    return render(request, "admin.html")
 
 
 @login_required(login_url='loginView')
@@ -68,7 +79,6 @@ def UpdateReportInfo(request):
         Report_Update.save()
         messages.add_message(request, messages.INFO, 'Report Updated Successfully')
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-
     else:
         messages.add_message(request, messages.INFO, 'Report Title Already Exists')
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
@@ -77,6 +87,7 @@ def UpdateReportInfo(request):
 @login_required(login_url='loginView')
 def viewAllReport(request, id):
     viewAllReport = Report.objects.filter(user_id=id)
+    # paginator = Paginator(viewAllReport, 5)
     return render(request, 'viewAllReport.html', {'viewAllReport': viewAllReport})
 
 
@@ -108,7 +119,11 @@ def loginCheck(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
-        if user is not None:
+        admin = authenticate(request, is_staff=1, username=username, password=password)
+        if admin is not None:
+            login(request, admin)
+            return redirect('home')
+        elif user is not None:
             login(request, user)
             return redirect('home')
         else:
