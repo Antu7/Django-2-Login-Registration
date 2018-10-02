@@ -4,14 +4,11 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
-import sys
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.template.defaultfilters import slugify
 from .models import Report
 
-
-# from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -22,7 +19,6 @@ def loginView(request):
         return render(request, "login.html")
 
 
-
 @login_required(login_url='loginView')
 def home(request):
     return render(request, "home.html")
@@ -30,7 +26,8 @@ def home(request):
 
 @login_required(login_url='loginView')
 def admin(request):
-    return render(request, "admin.html")
+    viewAlluser = AuthUser.objects.all()
+    return render(request, 'admin.html', {'viewAlluser': viewAlluser})
 
 
 @login_required(login_url='loginView')
@@ -87,7 +84,6 @@ def UpdateReportInfo(request):
 @login_required(login_url='loginView')
 def viewAllReport(request, id):
     viewAllReport = Report.objects.filter(user_id=id)
-    # paginator = Paginator(viewAllReport, 5)
     return render(request, 'viewAllReport.html', {'viewAllReport': viewAllReport})
 
 
@@ -119,13 +115,12 @@ def loginCheck(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
-        admin = authenticate(request, is_staff=1, username=username, password=password)
-        if admin is not None:
-            login(request, admin)
-            return redirect('home')
-        elif user is not None:
+        if user and user.is_staff is False:
             login(request, user)
             return redirect('home')
+        elif user and user.is_staff is True:
+            login(request, user)
+            return redirect('admin')
         else:
             messages.add_message(request, messages.INFO, 'Wrong User Name Or Password')
             return redirect('loginView')
