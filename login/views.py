@@ -27,7 +27,8 @@ def home(request):
 @login_required(login_url='loginView')
 def admin(request):
     viewAlluser = AuthUser.objects.all()
-    return render(request, 'admin.html', {'viewAlluser': viewAlluser})
+    num_post = AuthUser.objects.filter(is_staff=0).count()
+    return render(request, 'admin.html', {'viewAlluser': viewAlluser, 'num_post': num_post})
 
 
 @login_required(login_url='loginView')
