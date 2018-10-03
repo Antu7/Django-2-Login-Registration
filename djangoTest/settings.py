@@ -25,7 +25,7 @@ SECRET_KEY = '^csrdayxgtxbal_t4-_5griete1bpnf#mfdk8a!zbes@@vmho7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'login',
+    'wkhtmltopdf',
 ]
 
 MIDDLEWARE = [

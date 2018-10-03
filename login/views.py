@@ -9,12 +9,38 @@ from django.contrib.auth.decorators import login_required
 from django.template.defaultfilters import slugify
 from .models import Report
 
+from django.http import HttpResponse
+from django.views.generic import View
+
+from djangoTest.utils import render_to_pdf  # created in step 4
+
+from django.template.loader import get_template
+
 
 # Create your views here.
 
+def testPrint(request, *args, **kwargs):
+    template = get_template("invoice.html")
+    context = {
+        'amount': 39.99,
+        'customer_name': 'Cooper Mann',
+        'order_id': 1233434,
+    }
+    html = template.render(context)
+    pdf = render_to_pdf('invoice.html', context)
+    return HttpResponse(pdf, content_type='application/pdf')
+
+    # pdf = render_to_pdf('pdf/invoice.html', data)
+    # return HttpResponse(pdf, content_type='application/pdf')
+
+
 def loginView(request):
-    if request.user.is_authenticated:
+    if request.user.is_authenticated and request.user.is_staff is False:
         return render(request, "home.html")
+    elif request.user.is_authenticated and request.user.is_staff is True:
+        viewAlluser = AuthUser.objects.all()
+        num_post = AuthUser.objects.filter(is_staff=0).count()
+        return render(request, 'admin.html', {'viewAlluser': viewAlluser, 'num_post': num_post})
     else:
         return render(request, "login.html")
 

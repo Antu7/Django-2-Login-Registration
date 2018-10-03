@@ -3,9 +3,9 @@
 
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
+from django.conf.urls import url
 
 from . import views
-
 
 urlpatterns = [
     path('', views.loginView, name='loginView'),
@@ -22,4 +22,9 @@ urlpatterns = [
     path('UpdateReportInfo', views.UpdateReportInfo, name='UpdateReportInfo'),
     path('updateUserInfo', views.updateUserInfo, name='updateUserInfo'),
     path('logout_view', views.logout_view, name="logout_view"),
+
+    path('testPrint', views.testPrint, name="testPrint"),
+    # url(r'^testPrint/$', testPrint.as_view()),
 ]
+
+
