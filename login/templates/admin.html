@@ -68,14 +68,18 @@
                                 <td>{{ info.username }}</td>
                                 <td>{{ info.email }}</td>
                                 <td>
+                                    <a href="{% url 'downloadPDf' info.id%}"
+                                       class="btn btn-info btn-xs"><i
+                                            class="fa fa-repeat"></i>
+                                        Download PDF </a>
+                                    <a href="{% url 'testPrint' info.id %}"
+                                       class="btn btn-danger btn-xs"><i
+                                            class="fa fa-trash-o"></i>
+                                        View PDF </a>
                                     <a href="{% url 'editReportInfo' info.id %}"
                                        class="btn btn-info btn-xs"><i
                                             class="fa fa-repeat"></i>
-                                        Edit </a>
-                                    <a href="{% url 'testPrint' %}"
-                                       class="btn btn-danger btn-xs"><i
-                                            class="fa fa-trash-o"></i>
-                                        Print </a>
+                                        Print PDF </a>
                                 </td>
                             </tr>
                             </tbody>

@@ -1,6 +1,4 @@
 # Login Urls
-
-
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from django.conf.urls import url
@@ -23,8 +21,7 @@ urlpatterns = [
     path('updateUserInfo', views.updateUserInfo, name='updateUserInfo'),
     path('logout_view', views.logout_view, name="logout_view"),
 
-    path('testPrint', views.testPrint, name="testPrint"),
-    # url(r'^testPrint/$', testPrint.as_view()),
+    path('testPrint/<int:id>/', views.testPrint, name="testPrint"),
+
+    path('downloadPDf/<int:id>/', views.downloadPDf, name="downloadPDf"),
 ]
-
-

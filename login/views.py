@@ -19,19 +19,27 @@ from django.template.loader import get_template
 
 # Create your views here.
 
-def testPrint(request, *args, **kwargs):
-    template = get_template("invoice.html")
-    context = {
-        'amount': 39.99,
-        'customer_name': 'Cooper Mann',
-        'order_id': 1233434,
-    }
-    html = template.render(context)
-    pdf = render_to_pdf('invoice.html', context)
-    return HttpResponse(pdf, content_type='application/pdf')
+def testPrint(request, id):
+    context = AuthUser.objects.filter(id=id)
+    pdf = render_to_pdf('invoice.html', {'context': context})
+    if pdf:
+        response = HttpResponse(pdf, content_type='application/pdf')
+        response['Content-Disposition'] = content
+        return response
+    return HttpResponse("Not found")
 
-    # pdf = render_to_pdf('pdf/invoice.html', data)
-    # return HttpResponse(pdf, content_type='application/pdf')
+
+def downloadPDf(request, id):
+    context = AuthUser.objects.filter(id=id)
+    pdf = render_to_pdf('invoice.html', {'context': context})
+    if pdf:
+        response = HttpResponse(pdf, content_type='application/pdf')
+        filename = "Invoice_%s.pdf" % ("12341231")
+        content = "inline; filename='%s'" % (filename)
+        content = "attachment; filename='%s'" % (filename)
+        response['Content-Disposition'] = content
+        return response
+    return HttpResponse("Not found")
 
 
 def loginView(request):

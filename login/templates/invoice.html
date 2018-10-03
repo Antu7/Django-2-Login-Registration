@@ -34,19 +34,22 @@
                  background-color: #fff; /* Modern Browsers */
              }
 
-
     </style>
 </head>
 <body>
 <div class='wrapper'>
     <div class='header'>
-        <p class='title'>Invoice # {{ order_id }} </p>
+        <p class='title'># User Information # </p>
     </div>
     <div>
         <div class='details'>
-            Bill to:{{ customer_name }} <br/>
-            Amount:{{ amount }} <br/>
-            Date:
+            {% for info in context %}
+
+            User Name: {{ info.username }} <br/>
+            Email : {{ info.email }}<br/>
+            Join Date: {{info.date_joined}}
+
+            {% endfor %}
             <hr class='hrItem'/>
         </div>
     </div>
